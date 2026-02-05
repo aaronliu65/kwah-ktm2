@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="_圖層_2" data-name="圖層 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 33.85 33.51">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #58595b;
+      }
+    </style>
+  </defs>
+  <g id="Layer_1" data-name="Layer 1">
+    <polygon class="cls-1" points="33.85 33.51 18.16 33.51 18.16 32.51 32.85 32.51 32.85 1 18.16 1 18.16 0 33.85 0 33.85 33.51"/>
+    <polyline class="cls-1" points="23.67 16.75 11.35 8.43 10.76 9.25 21.29 16.26 0 16.26 0 17.26 21.29 17.25 10.76 24.26 11.35 25.07 23.67 16.75"/>
+  </g>
+</svg>

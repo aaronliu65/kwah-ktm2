@@ -1,0 +1,54 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+@plugin "daisyui" {
+    prefix: "daisy-";
+    themes: light --default;
+    log: false;
+}
+
+@theme {
+    --font-sans: "Avenir", "Noto Sans TC", "Noto Sans SC", sans-serif;
+    --breakpoint-sm: 576px;
+    --breakpoint-md: 769px;
+    --breakpoint-lg: 1024px;
+    --breakpoint-xl: 1200px;
+    --breakpoint-2xl: 1441px;
+    --breakpoint-3xl: 1601px;
+    --breakpoint-ultra: 1921px;
+    --theme-color-primary: #a37224;
+    --theme-color-secondary: #e5e4d9;
+    --text-color-primary: #58595b;
+}
+
+:root {
+    @apply font-sans;
+}
+
+.page-enter-active,
+.page-leave-active {
+    @apply transition-all duration-700;
+}
+
+.page-enter-from,
+.page-leave-to {
+    @apply absolute inset-x-0 top-0 min-h-svh opacity-0 blur-md;
+}
+
+.prose {
+    --prose-color: #707070;
+    @apply max-w-none text-(--prose-color);
+
+    :where(p):not(:where([class~="not-prose"])),
+    :where(ol):not(:where([class~="not-prose"])),
+    :where(ul):not(:where([class~="not-prose"])) {
+        @apply text-justify leading-[1.4] first:mt-0 last:mb-0;
+    }
+}
+
+body {
+    @apply @container text-[16px];
+}
+
+.main-content {
+    @apply min-h-svh h-svh;
+}

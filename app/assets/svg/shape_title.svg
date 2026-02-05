@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="_圖層_2" data-name="圖層 2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 283.15 45.85">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+      }
+
+      .cls-2 {
+        fill: url(#linear-gradient-2);
+      }
+
+      .cls-3 {
+        fill: url(#linear-gradient);
+      }
+
+      .cls-4 {
+        fill: #a37224;
+      }
+
+      .cls-5 {
+        clip-path: url(#clippath);
+      }
+    </style>
+    <linearGradient id="linear-gradient" x1="0" y1="22.92" x2="268.57" y2="22.92" gradientUnits="userSpaceOnUse">
+      <stop offset=".26" stop-color="#7d664a"/>
+      <stop offset=".51" stop-color="#906c36"/>
+      <stop offset=".77" stop-color="#9e7028"/>
+      <stop offset="1" stop-color="#a37224"/>
+    </linearGradient>
+    <clipPath id="clippath">
+      <path class="cls-1" d="M268.57,45.85H0V0h251.77l16.8,45.85ZM276.96,45.85L260.17,0h-4.05l16.8,45.85h4.05ZM283.15,45.85L266.35,0h-2.05l16.8,45.85h2.05Z"/>
+    </clipPath>
+    <linearGradient id="linear-gradient-2" x1="-923.24" y1="3573.3" x2="-923.24" y2="3176.39" gradientTransform="translate(-3229.91 -879.71) rotate(-90)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#7d664a"/>
+      <stop offset=".22" stop-color="#cfbd87"/>
+      <stop offset=".34" stop-color="#bda979"/>
+      <stop offset=".61" stop-color="#9a855f"/>
+      <stop offset=".82" stop-color="#846e4f"/>
+      <stop offset=".96" stop-color="#7d664a"/>
+    </linearGradient>
+  </defs>
+  <g id="Layer_1" data-name="Layer 1">
+    <polygon class="cls-3" points="268.57 45.85 0 45.85 0 0 251.77 0 268.57 45.85"/>
+    <polygon class="cls-4" points="276.96 45.85 260.17 0 256.12 0 272.91 45.85 276.96 45.85"/>
+    <polygon class="cls-4" points="283.15 45.85 266.35 0 264.3 0 281.1 45.85 283.15 45.85"/>
+    <g class="cls-5">
+      <rect class="cls-2" x="-53.52" y="41.31" width="396.91" height="4.46"/>
+    </g>
+  </g>
+</svg>

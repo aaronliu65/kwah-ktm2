@@ -1,0 +1,95 @@
+{
+    "version": 1.1,
+    "atDirectives": [
+        {
+            "name": "@tailwind",
+            "description": "Use the `@tailwind` directive to insert Tailwind's `base`, `components`, `utilities` and `screens` styles into your CSS.",
+            "references": [
+                {
+                    "name": "Tailwind Documentation",
+                    "url": "https://tailwindcss.com/docs/functions-and-directives#tailwind"
+                }
+            ]
+        },
+        {
+            "name": "@apply",
+            "description": "Use the `@apply` directive to inline any existing utility classes into your own custom CSS. This is useful when you find a common utility pattern in your HTML that you’d like to extract to a new component.",
+            "references": [
+                {
+                    "name": "Tailwind Documentation",
+                    "url": "https://tailwindcss.com/docs/functions-and-directives#apply"
+                }
+            ]
+        },
+        {
+            "name": "@responsive",
+            "description": "You can generate responsive variants of your own classes by wrapping their definitions in the `@responsive` directive:\n```css\n@responsive {\n  .alert {\n    background-color: #E53E3E;\n  }\n}\n```\n",
+            "references": [
+                {
+                    "name": "Tailwind Documentation",
+                    "url": "https://tailwindcss.com/docs/functions-and-directives#responsive"
+                }
+            ]
+        },
+        {
+            "name": "@screen",
+            "description": "The `@screen` directive allows you to create media queries that reference your breakpoints by **name** instead of duplicating their values in your own CSS:\n```css\n@screen sm {\n  /* ... */\n}\n```\n…gets transformed into this:\n```css\n@media (min-width: 640px) {\n  /* ... */\n}\n```\n",
+            "references": [
+                {
+                    "name": "Tailwind Documentation",
+                    "url": "https://tailwindcss.com/docs/functions-and-directives#screen"
+                }
+            ]
+        },
+        {
+            "name": "@variants",
+            "description": "Generate `hover`, `focus`, `active` and other **variants** of your own utilities by wrapping their definitions in the `@variants` directive:\n```css\n@variants hover, focus {\n   .btn-brand {\n    background-color: #3182CE;\n  }\n}\n```\n",
+            "references": [
+                {
+                    "name": "Tailwind Documentation",
+                    "url": "https://tailwindcss.com/docs/functions-and-directives#variants"
+                }
+            ]
+        },
+        {
+            "name": "@theme",
+            "description": "Use the `@theme` directive to define your project's custom design tokens, like fonts, colors, and breakpoints:\n```css\n@theme {\n  --font-display: \"Satoshi\", \"sans-serif\";\n  --breakpoint-3xl: 120rem;\n  --color-avocado-100: oklch(0.99 0 0);\n  --color-avocado-200: oklch(0.98 0.04 113.22);\n  --ease-fluid: cubic-bezier(0.3, 0, 0, 1);\n  /* ... */\n}\n```\n",
+            "references": [
+                {
+                    "name": "Tailwind Documentation",
+                    "url": "https://tailwindcss.com/docs/functions-and-directives#theme-directive"
+                }
+            ]
+        },
+        {
+            "name": "@plugin",
+            "description": "Use the `@plugin` directive to register custom plugins with Tailwind CSS. This allows you to add custom utilities, components, base styles, and other features to your CSS framework:\n```css\n@plugin {\n  /* plugin definition */\n}\n```\nPlugins can be used to extend Tailwind's functionality or create reusable style patterns.",
+            "references": [
+                {
+                    "name": "Tailwind Documentation",
+                    "url": "https://tailwindcss.com/docs/functions-and-directives#plugin-directive"
+                }
+            ]
+        },
+        {
+            "name": "@utility",
+            "description": "Use the `@utility` directive to add custom utilities to your project that work with variants like `hover`, `focus` and `lg`:\n```css\n@utility tab-4 {\n  tab-size: 4;\n}\n```\nThis allows you to create utilities that integrate seamlessly with Tailwind's variant system and can be used with modifiers like `hover:tab-4` or `lg:tab-4`.",
+            "references": [
+                {
+                    "name": "Tailwind Documentation",
+                    "url": "https://tailwindcss.com/docs/functions-and-directives#utility-directive"
+                }
+            ]
+        },
+        {
+            "name": "@reference",
+            "description": "Use the `@reference` directive to import your main stylesheet for reference without actually including the styles. This is useful when you want to use `@apply` or `@variant` in the `<style>` block of a Vue or Svelte component, or within CSS modules:\n```vue\n<template>\n  <h1>Hello world!</h1>\n</template>\n<style>\n  @reference \"../../app.css\";\n  h1 {\n    @apply text-2xl font-bold text-red-500;\n  }\n</style>\n```\nIf you're using the default theme with no customizations, you can import `tailwindcss` directly:\n```css\n@reference \"tailwindcss\";\n```",
+            "references": [
+                {
+                    "name": "Tailwind Documentation",
+                    "url": "https://tailwindcss.com/docs/functions-and-directives#reference-directive"
+                }
+            ]
+        }
+    ]
+}
