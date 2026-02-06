@@ -35,13 +35,13 @@
 }
 
 .prose {
-    --prose-color: #707070;
+    --text-color-primary: #58595b;
     @apply max-w-none text-(--prose-color);
 
     :where(p):not(:where([class~="not-prose"])),
     :where(ol):not(:where([class~="not-prose"])),
     :where(ul):not(:where([class~="not-prose"])) {
-        @apply text-justify leading-[1.4] first:mt-0 last:mb-0;
+        @apply text-[1em] text-justify leading-[1.4] first:mt-0 last:mb-0;
     }
 }
 
@@ -50,5 +50,5 @@ body {
 }
 
 .main-content {
-    @apply min-h-svh h-svh;
+    @apply min-h-[640px] h-svh;
 }

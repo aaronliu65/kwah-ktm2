@@ -10,10 +10,10 @@ const availableLocales = computed(() => {
 @reference "~/assets/css/style.css";
 
 .lang-switch {
-    @apply flex text-[1.125em];
+    @apply flex text-[0.9375cqw] @min-[1920px]:text-[1.125em];
 
     .lang-item {
-        @apply block px-2 border-r last:border-r-0 border-(--theme-color-primary) text-(--theme-color-primary) leading-5;
+        @apply block px-2 border-r last:border-r-0 border-(--theme-color-primary) text-(--theme-color-primary) leading-[1.04cqw]
     }
 }
 </style>

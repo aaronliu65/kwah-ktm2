@@ -1,6 +1,6 @@
 <script setup>
 const hasLogo = ref(false);
-const hasHeader = useState('hasHeader');
+const hasHeader = useState("hasHeader");
 const hasMainDisclaimer = ref(false);
 
 onMounted(() => {
@@ -18,13 +18,10 @@ onMounted(() => {
         <Transition
             enter-active-class="animate__animated animate__fadeIn"
             leave-active-class="animate__animated animate__fadeOut"
-            @leave="hasHeader, hasMainDisclaimer = true"
+            @leave="(hasHeader, (hasMainDisclaimer = true))"
         >
-            <div
-                class="absolute inset-0 z-0 flex items-center justify-center"
-                v-if="hasLogo"
-            >
-                <div class="aspect-760/320 max-w-[760px]">
+            <div class="absolute inset-0 z-0 flex items-center justify-center" v-if="hasLogo">
+                <div class="aspect-760/320 w-[39.6cqw] max-w-[760px]">
                     <SharpImg src="logo_ktm2.png" />
                 </div>
             </div>
@@ -33,14 +30,18 @@ onMounted(() => {
             enter-active-class="animate__animated animate__fadeIn"
             leave-active-class="animate__animated animate__fadeOut"
         >
-            <PopupBox :fixed="false" :enterUrl="'/home'" v-if="hasMainDisclaimer">
+            <PopupBox
+                :fixed="false"
+                :enterUrl="'/home'"
+                v-if="hasMainDisclaimer"
+            >
                 <div
-                    class="text-justify text-[1.25em] font-light text-(--text-color-primary)"
+                    class="prose font-light text-(--text-color-primary)"
                 >
-                    <p class="mb-4">
+                    <p class="@min-[992px]:text-[1.04cqw] @min-[1920px]:text-[1.25em]!"">
                         發展項目及期數名稱：啟德海灣(「發展項目」)。發展項目的第1期稱為「啟德海灣1」。發展項目的第2期稱為「啟德海灣2」。期數所位於的區域：啟德︱期數所位於的街道的名稱及門牌號數：承豐道15號︱賣方就期數指定的互聯網網站的網址：www.ktmarina.com.hk︱本廣告/宣傳資料內載列的相片、圖像、繪圖或素描顯示純屬畫家對有關發展項目之想像。有關相片、圖像、繪圖或素描並非按照比例繪畫及/或可能經過電腦修飾處理。準買家如欲了解發展項目的詳情，請參閱售樓說明書。賣方亦建議準買家到有關發展地盤作實地考察，以對該發展地盤、其周邊地區環境及附近的公共設施有較佳了解。
                     </p>
-                    <p class="text-[0.45em]">
+                    <p class="text-[0.75em]!">
                         本廣告/宣傳資料僅為促銷發展項目第2期內的住宅物業。｜賣方：星龍香港投資有限公司｜賣方的控權公司：錦浩發展有限公司｜期數的認可人士：吳國輝｜期數的認可人士以其專業身分擔任經營人、董事或僱員的商號或法團：梁黃顧建築師(香港)事務所有限公司｜期數的承建商：
                         協興建築有限公司｜就期數中的住宅物業的出售而代表擁有人行事的律師事務所：貝克
                         •

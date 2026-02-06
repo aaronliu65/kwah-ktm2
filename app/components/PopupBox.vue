@@ -109,7 +109,7 @@ const emit = defineEmits(["closed"]);
                     <svgo_icon-close
                         filled
                         :fontControlled="false"
-                        class="h-9 w-9"
+                        class="min-h-[24px] min-w-[24px] h-[1.875cqw] w-[1.875cqw]"
                     />
                 </NuxtLinkLocale>
             </div>

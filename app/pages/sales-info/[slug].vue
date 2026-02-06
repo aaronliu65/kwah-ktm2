@@ -26,7 +26,7 @@ const popupBoxTitle = computed(() => {
 @reference "~/assets/css/style.css";
 
 .popup-box-title {
-    @apply relative w-full px-16 pb-2 text-[1.75em] tracking-[0.15em] text-(--theme-color-primary);
+    @apply relative w-full px-16 pb-2 text-[1.46cqw] @min-[1920px]:text-[1.75em] tracking-[0.15em] text-(--theme-color-primary);
 
     &:after {
         @apply absolute inset-x-0 bottom-0 block h-0.5 w-full bg-linear-to-r from-[#826a4b] via-[#c5af7d] via-15% to-[#826a4b] content-[''];
@@ -45,7 +45,7 @@ const popupBoxTitle = computed(() => {
                 <div class="popup-box-title">{{ popupBoxTitle }}</div>
             </template>
             <div
-                class="px-16 py-7 text-[1.25em] tracking-widest text-(--theme-color-primary)"
+                class="px-16 py-7 text-[1.04cqw] @min-[1920px]:text-[1.25em] tracking-widest text-(--theme-color-primary)"
             >
                 詳情容後公布
             </div>
