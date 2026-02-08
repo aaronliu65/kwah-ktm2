@@ -33,7 +33,7 @@ onMounted(() => {
 }
 
 .logo {
-    @apply absolute inset-x-0 mx-auto block aspect-415/181 w-[22.39cqw] max-w-[430px] translate-x-[-2%] translate-y-[-3.8%];
+    @apply absolute inset-x-0 mx-auto block aspect-415/181 w-[22.39cqw] translate-x-[-2%] translate-y-[-3.8%];
 
     > img {
         @apply h-full w-full object-contain;

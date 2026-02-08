@@ -25,24 +25,24 @@ if (document) {
 const siteName = useState("siteName", () => {
     switch (locale.value) {
         case "en":
-            return "NUXT V4 STARTER";
+            return "KT Marina2 啟德海灣2 - Victoria Harbour Living | Official Website";
         case "sc":
-            return "NUXT V4 STARTER";
+            return "启德海湾2 KT Marina2 - 维多利亚港生活圈 ｜ 官方网站";
         case "tc":
-            return "NUXT V4 STARTER";
+            return "啟德海灣2 KT Marina2 - 維多利亞港生活圈 ｜ 官方網站";
     }
 });
 
 watchEffect(() => {
     switch (locale.value) {
         case "en":
-            siteName.value = "NUXT V4 STARTER";
+            siteName.value = "KT Marina2 啟德海灣2 - Victoria Harbour Living | Official Website";
             break;
         case "sc":
-            siteName.value = "NUXT V4 STARTER";
+            siteName.value = "启德海湾2 KT Marina2 - 维多利亚港生活圈 ｜ 官方网站";
             break;
         case "tc":
-            siteName.value = "NUXT V4 STARTER";
+            siteName.value = "啟德海灣2 KT Marina2 - 維多利亞港生活圈 ｜ 官方網站";
             break;
     }
 });

@@ -1,5 +1,33 @@
+<i18n lang="yaml">
+ en:
+     sales-brochure: "Sales Brochure"
+     price-list: "Price List"
+     sales-arrangements: "Sales Arrangements"
+     tender-documents: "Tender Documents"
+     register-of-transactions: "Register of Transactions"
+     deed-of-mutual-covenant: "Deed of Mutual Covenant"
+     aerial-photograph: "Aerial Photograph"
+ tc:
+     sales-brochure: "售樓說明書"
+     price-list: "價單"
+     sales-arrangements: "銷售安排"
+     tender-documents: "招標文件"
+     register-of-transactions: "成交紀錄冊"
+     deed-of-mutual-covenant: "公契"
+     aerial-photograph: "鳥瞰照片"
+ sc:
+     sales-brochure: "售楼说明书"
+     price-list: "价单"
+     sales-arrangements: "销售安排"
+     tender-documents: "招标文件"
+     register-of-transactions: "成交纪录册"
+     deed-of-mutual-covenant: "公契"
+     aerial-photograph: "鸟瞰照片"
+ </i18n>
+
 <script setup>
 const route = useRoute();
+const { t } = useI18n();
 const popupBoxTitle = computed(() => {
     switch (route.params.slug) {
         case "sales-brochure":
@@ -19,6 +47,10 @@ const popupBoxTitle = computed(() => {
         default:
             return "";
     }
+});
+
+useHead({
+    title: `${t(route.params.slug)}`,
 });
 </script>
 

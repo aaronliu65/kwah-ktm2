@@ -1,5 +1,19 @@
+<i18n lang="yaml">
+en:
+    title: Home
+tc:
+    title: 主頁
+sc:
+    title: 主页
+</i18n>
+
 <script setup>
+const { locale, t } = useI18n();
 const hasVideo = ref(false);
+
+useHead({
+    title: `${t("title")}`,
+});
 </script>
 
 <style scoped>
@@ -57,7 +71,8 @@ const hasVideo = ref(false);
         >
             <div class="fixed inset-0 z-20 bg-black" v-if="hasVideo">
                 <div
-                    class="absolute top-0 right-0 z-21 aspect-square w-10 cursor-pointer bg-(--theme-color-secondary) p-2" @click="hasVideo = false"
+                    class="absolute top-0 right-0 z-21 aspect-square w-10 cursor-pointer bg-(--theme-color-secondary) p-2"
+                    @click="hasVideo = false"
                 >
                     <div
                         class="relative h-full w-full before:absolute before:inset-0 before:m-auto before:block before:h-0.5 before:w-full before:rotate-45 before:bg-(--theme-color-primary) before:content-[''] after:absolute after:inset-0 after:m-auto after:block after:h-0.5 after:w-full after:-rotate-45 after:bg-(--theme-color-primary) after:content-['']"
@@ -65,7 +80,7 @@ const hasVideo = ref(false);
                 </div>
                 <video controls autoplay class="h-full w-full">
                     <source
-                        src="/videos/KT_sale video_Design&clubhouse_CANT_3m11s_3Sep24.mp4"
+                        src="https://www.ktmarina.com.hk/videos/KT_sale%20video_Design&clubhouse_CANT_3m11s_3Sep24.mp4"
                         type="video/mp4"
                     />
                 </video>
