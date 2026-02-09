@@ -48,7 +48,16 @@ useHead({
                     src="sales-video.webp"
                     class="h-full w-full object-contain"
                 />
-                <div class="video-title">銷售影片</div>
+                <div class="video-title">
+                    <Translate>
+                        <template #en>
+                            Sales Video
+                        </template>
+                        <template #tc>
+                            銷售影片
+                        </template>
+                    </Translate>
+                </div>
             </div>
         </div>
         <div class="absolute bottom-16 left-0">

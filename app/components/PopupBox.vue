@@ -121,7 +121,14 @@ const emit = defineEmits(["closed"]);
             <div class="btn-enter" v-if="hasBtnEnter">
                 <NuxtLinkLocale :to="`${enterUrl}`">
                     <div class="flex items-center justify-center gap-1">
-                        進入
+                        <Translate>
+                            <template #en>
+                                Enter
+                            </template>
+                            <template #tc>
+                                進入
+                            </template>
+                        </Translate>
                         <svgo_icon-enter
                             filled
                             :fontControlled="false"

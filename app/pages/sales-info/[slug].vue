@@ -1,29 +1,4 @@
-<i18n lang="yaml">
- en:
-     sales-brochure: "Sales Brochure"
-     price-list: "Price List"
-     sales-arrangements: "Sales Arrangements"
-     tender-documents: "Tender Documents"
-     register-of-transactions: "Register of Transactions"
-     deed-of-mutual-covenant: "Deed of Mutual Covenant"
-     aerial-photograph: "Aerial Photograph"
- tc:
-     sales-brochure: "售樓說明書"
-     price-list: "價單"
-     sales-arrangements: "銷售安排"
-     tender-documents: "招標文件"
-     register-of-transactions: "成交紀錄冊"
-     deed-of-mutual-covenant: "公契"
-     aerial-photograph: "鳥瞰照片"
- sc:
-     sales-brochure: "售楼说明书"
-     price-list: "价单"
-     sales-arrangements: "销售安排"
-     tender-documents: "招标文件"
-     register-of-transactions: "成交纪录册"
-     deed-of-mutual-covenant: "公契"
-     aerial-photograph: "鸟瞰照片"
- </i18n>
+<i18n src="~/translates/main.yml" lang="yaml" />
 
 <script setup>
 const route = useRoute();
@@ -31,19 +6,19 @@ const { t } = useI18n();
 const popupBoxTitle = computed(() => {
     switch (route.params.slug) {
         case "sales-brochure":
-            return "售樓說明書";
+            return `${ t('sales-brochure') }`;
         case "price-list":
-            return "價單";
+            return `${ t('price-list') }`;
         case "sales-arrangements":
-            return "銷售安排";
+            return `${ t('sales-arrangements') }`;
         case "tender-documents":
-            return "招標文件";
+            return `${ t('tender-documents') }`;
         case "register-of-transactions":
-            return "成交紀錄冊";
+            return `${ t('register-of-transactions') }`;
         case "deed-of-mutual-covenant":
-            return "公契";
+            return `${ t('deed-of-mutual-covenant') }`;
         case "aerial-photograph":
-            return "鳥瞰照片";
+            return `${ t('aerial-photograph') }`;
         default:
             return "";
     }
@@ -74,12 +49,12 @@ useHead({
             class="[--box-b-padding:3.5rem] [--box-t-padding:3.5rem] [--box-x-padding:3rem]"
         >
             <template v-slot:header>
-                <div class="popup-box-title">{{ popupBoxTitle }}</div>
+                <div class="popup-box-title">{{ $t(popupBoxTitle) }}</div>
             </template>
             <div
                 class="px-16 py-7 text-[1.04cqw] @min-[1920px]:text-[1.25em] tracking-widest text-(--theme-color-primary)"
             >
-                詳情容後公布
+                {{ t('Coming Soon') }}
             </div>
         </PopupBox>
     </div>

@@ -1,4 +1,7 @@
+<i18n src="~/translates/main.yml" lang="yaml" />
+
 <script setup>
+const { locale, t } = useI18n();
 const header = ref(null);
 const headerHeight = useState("headerHeight");
 const wechatQr = useState("wechatQr");
@@ -53,10 +56,10 @@ onMounted(() => {
     }
 
     .menu-item {
-        @apply text-center;
+        @apply text-center flex items-center justify-center;
 
         > a {
-            @apply relative block text-[1.04cqw] tracking-widest whitespace-nowrap text-(--theme-color-primary) @min-[1920px]:text-[1.25em];
+            @apply relative block text-[1.04cqw] tracking-widest whitespace-nowrap text-(--theme-color-primary) @min-[1920px]:text-[1.25em] px-2;
 
             &:before {
                 @apply absolute inset-x-0 bottom-[calc(100%+0.4em)] mx-auto block aspect-square w-[0.31cqw] max-w-[6px] rounded-full bg-(--theme-color-primary) content-[''] scale-0 translate-y-[150%] transition-transform duration-500;
@@ -87,6 +90,14 @@ onMounted(() => {
             }
         }
     }
+
+    html[data-lang="en"] & {
+        .menu-item {
+            > a {
+                @apply whitespace-normal leading-[1.1] @min-[1920px]:text-[1em];
+            }
+        }
+    }
 }
 </style>
 
@@ -107,18 +118,18 @@ onMounted(() => {
                         </div>
                         <div class="menu-item">
                             <NuxtLinkLocale :to="`/sales-info/sales-brochure`"
-                                >售樓說明書</NuxtLinkLocale
+                                >{{ t('sales-brochure') }}</NuxtLinkLocale
                             >
                         </div>
                         <div class="menu-item">
                             <NuxtLinkLocale :to="`/sales-info/price-list`"
-                                >價單</NuxtLinkLocale
+                                >{{ t('price-list') }}</NuxtLinkLocale
                             >
                         </div>
                         <div class="menu-item">
                             <NuxtLinkLocale
                                 :to="`/sales-info/sales-arrangements`"
-                                >銷售安排</NuxtLinkLocale
+                                >{{ t('sales-arrangements') }}</NuxtLinkLocale
                             >
                         </div>
                     </div>
@@ -128,25 +139,25 @@ onMounted(() => {
                     <div class="inner-menu grid-cols-4">
                         <div class="menu-item">
                             <NuxtLinkLocale :to="`/sales-info/tender-documents`"
-                                >招標文件</NuxtLinkLocale
+                                >{{ t('tender-documents') }}</NuxtLinkLocale
                             >
                         </div>
                         <div class="menu-item">
                             <NuxtLinkLocale
                                 :to="`/sales-info/register-of-transactions`"
-                                >成交紀錄冊</NuxtLinkLocale
+                                >{{ t('register-of-transactions') }}</NuxtLinkLocale
                             >
                         </div>
                         <div class="menu-item">
                             <NuxtLinkLocale
                                 :to="`/sales-info/deed-of-mutual-covenant`"
-                                >公契</NuxtLinkLocale
+                                >{{ t('deed-of-mutual-covenant') }}</NuxtLinkLocale
                             >
                         </div>
                         <div class="menu-item">
                             <NuxtLinkLocale
                                 :to="`/sales-info/aerial-photograph`"
-                                >鳥瞰照片</NuxtLinkLocale
+                                >{{ t('aerial-photograph') }}</NuxtLinkLocale
                             >
                         </div>
                     </div>
