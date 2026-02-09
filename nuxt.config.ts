@@ -27,7 +27,11 @@ export default defineNuxtConfig({
             ],
             script: [
                 {
-                    innerHTML: "window.dataLayer = window.dataLayer || [];",
+                    src: "https://www.googletagmanager.com/gtag/js?id=G-N4NBHHS5CD",
+                    async: true,
+                },
+                {
+                    innerHTML: "window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-N4NBHHS5CD');",
                 },
             ],
         },
