@@ -1,6 +1,7 @@
 <script setup>
 const hasLogo = ref(false);
 const hasHeader = useState("hasHeader");
+const viewPort = useState("viewPort");
 const hasMainDisclaimer = ref(false);
 const prerender = process.env.NODE_ENV === "prerender";
 
@@ -34,6 +35,7 @@ onMounted(() => {
             <PopupBox
                 :fixed="false"
                 :enterUrl="'/home'"
+                :hasBtnClose="viewPort == 'desktop' ? true : false"
                 v-if="hasMainDisclaimer"
             >
                 <div

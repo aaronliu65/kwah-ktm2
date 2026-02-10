@@ -6,6 +6,18 @@ const wechatQr = useState("wechatQr");
 const activeHeader = computed(()=>{
     return route.name.indexOf('index') >= 0 && hasHeader.value ? false : true;
 });
+
+// Preload background video
+useHead({
+    link: [
+        {
+            rel: 'preload',
+            as: 'video',
+            href: '/videos/shutterstock_1062027418.mp4',
+            type: 'video/mp4'
+        }
+    ]
+});
 </script>
 
 <template>
@@ -28,7 +40,7 @@ const activeHeader = computed(()=>{
         </Transition>
         <div class="fixed inset-0 -z-1 overflow-hidden">
             <LayoutBoard :size="'cover'">
-                <video autoplay muted loop playsinline>
+                <video autoplay muted loop playsinline preload="metadata">
                     <source
                         src="/videos/shutterstock_1062027418.mp4"
                         type="video/mp4"

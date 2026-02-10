@@ -51,7 +51,7 @@ export default defineNuxtConfig({
         locales: [
             { code: "en", iso: "en-US", name: "EN" },
             { code: "tc", iso: "zh-HK", name: "繁" },
-            { code: "sc", iso: "zh-CN", name: "简" },
+            { code: "sc", iso: "zh-CN", name: "簡" },
         ],
         defaultLocale: "tc",
     },

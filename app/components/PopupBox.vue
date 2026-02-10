@@ -11,6 +11,10 @@ const props = defineProps({
         type: Boolean,
         default: true,
     },
+    hasBtnClose: {
+        type: Boolean,
+        default: true,
+    },
     hasBtnEnter: {
         type: Boolean,
         default: true,
@@ -77,21 +81,21 @@ const emit = defineEmits(["closed"]);
 }
 
 .popup-box {
-    @apply relative flex h-[calc(100%-80px)] max-h-[640px] w-[calc(100%-60px)] max-w-[1225px] flex-col items-start justify-start gap-4 overflow-hidden bg-(--theme-color-secondary)/90 px-(--box-x-padding,72px) pt-(--box-t-padding,104px) pb-(--box-b-padding,144px);
+    @apply relative flex h-[calc(100%-80px)] max-h-[640px] w-[calc(100%-60px)] max-w-[1225px] flex-col items-start justify-start gap-4 overflow-hidden bg-(--theme-color-secondary)/90 px-6 @min-[992px]:px-(--box-x-padding,72px) pt-6 @min-[992px]:pt-(--box-t-padding,104px) pb-(--box-b-padding,144px);
 
     .btn-close {
         @apply absolute top-8 right-8 cursor-pointer;
     }
 
     .btn-enter {
-        @apply absolute inset-x-0 bottom-10 mx-auto cursor-pointer text-[1.125em] text-[#58595b];
+        @apply absolute inset-x-0 bottom-10 mx-auto cursor-pointer @min-[992px]:text-[1.125em] text-[#58595b];
     }
 
     .content {
-        @apply h-full w-full overflow-hidden;
+        @apply h-full overflow-hidden;
 
         &:has(div.scrollbar-track.scrollbar-track-y[style="display: block;"]) {
-            @apply -mr-7 pr-7;
+            @apply -mr-4 pr-6 @min-[992px]:-mr-7 @min-[992px]:pr-7;
         }
     }
 }
@@ -104,7 +108,7 @@ const emit = defineEmits(["closed"]);
 <template>
     <div class="popup-box-wrapper" :class="{ fixed: fixed, absolute: !fixed }">
         <div class="popup-box" :class="{ 'h-auto!': AutoHeight }">
-            <div class="btn-close" @click="emit('closed')">
+            <div class="btn-close" @click="emit('closed')" v-if="hasBtnClose">
                 <NuxtLinkLocale :to="`${enterUrl}`">
                     <svgo_icon-close
                         filled

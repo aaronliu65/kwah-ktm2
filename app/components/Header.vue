@@ -27,7 +27,7 @@ onMounted(() => {
     @apply absolute inset-x-0 top-0 z-10 bg-(--theme-color-secondary)/90;
 
     .inner-header {
-        @apply relative mx-auto h-full w-[90%] pt-[2.08cqw] pb-[1.33cqw];
+        @apply relative mx-auto h-full w-[95%] @min-[1920px]:w-[90%] pt-[2.08cqw] pb-[1.33cqw]
     }
 
     &:after {
@@ -59,7 +59,7 @@ onMounted(() => {
         @apply text-center flex items-center justify-center;
 
         > a {
-            @apply relative block text-[1.04cqw] tracking-widest whitespace-nowrap text-(--theme-color-primary) @min-[1920px]:text-[1.25em] px-2;
+            @apply relative block tracking-widest whitespace-nowrap text-(--theme-color-primary) px-2;
 
             &:before {
                 @apply absolute inset-x-0 bottom-[calc(100%+0.4em)] mx-auto block aspect-square w-[0.31cqw] max-w-[6px] rounded-full bg-(--theme-color-primary) content-[''] scale-0 translate-y-[150%] transition-transform duration-500;
@@ -91,10 +91,18 @@ onMounted(() => {
         }
     }
 
+    html:not([data-lang="en"]) & {
+        .menu-item {
+            > a {
+                @apply text-[1.04cqw] min-[1920px]:text-[1.25em];
+            }
+        }
+    }
+
     html[data-lang="en"] & {
         .menu-item {
             > a {
-                @apply whitespace-normal leading-[1.1] @min-[1920px]:text-[1em];
+                @apply whitespace-normal leading-[1.1] text-[0.83cqw] @min-[1920px]:text-[1em];
             }
         }
     }

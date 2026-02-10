@@ -2,7 +2,7 @@
 @reference "~/assets/css/style.css";
 
 .footer {
-    @apply relative overflow-hidden bg-(--theme-color-secondary) pt-26.5 pb-46.25 text-(--text-color-primary);
+    @apply relative overflow-hidden bg-(--theme-color-secondary)/90 pt-26.5 pb-46.25 text-(--text-color-primary);
 
     .inner-footer {
         @apply w-[85%] mx-auto px-4 text-center;
