@@ -50,5 +50,5 @@ body {
 }
 
 .main-content {
-    @apply min-h-[640px] h-svh;
+    @apply relative min-h-[640px] h-svh;
 }

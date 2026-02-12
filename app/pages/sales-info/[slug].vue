@@ -2,7 +2,7 @@
 
 <script setup>
 const route = useRoute();
-const { t } = useI18n();
+const { locale, t } = useI18n();
 const popupBoxTitle = computed(() => {
     switch (route.params.slug) {
         case "sales-brochure":
@@ -49,7 +49,7 @@ useHead({
             class="[--box-b-padding:3.5rem] [--box-t-padding:3.5rem] [--box-x-padding:3rem]"
         >
             <template v-slot:header>
-                <div class="popup-box-title">{{ $t(popupBoxTitle) }}</div>
+                <div class="popup-box-title">{{ popupBoxTitle }}</div>
             </template>
             <div
                 class="px-[3.33cqw] py-[1.46cqw] @min-[1920px]:px-16 @min-[1920px]:py-7 text-[1.04cqw] @min-[1920px]:text-[1.25em] tracking-widest text-(--theme-color-primary)"

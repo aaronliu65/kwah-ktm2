@@ -70,7 +70,14 @@ useHead({
                 <div
                     class="absolute inset-0 flex items-center justify-end px-10 text-[1.25em] tracking-[0.05em] text-white"
                 >
-                    啟德海灣1
+                <Translate>
+                    <template #en>
+                        KT Marina 1
+                    </template>
+                    <template #tc>
+                        啟德海灣1
+                    </template>
+                </Translate>
                 </div>
             </div>
         </div>

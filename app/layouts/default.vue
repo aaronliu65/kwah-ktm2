@@ -12,9 +12,10 @@ useHead({
     link: [
         {
             rel: 'preload',
-            as: 'video',
             href: '/videos/shutterstock_1062027418.mp4',
-            type: 'video/mp4'
+            as: 'fetch',
+            type: 'video/mp4',
+            crossorigin: 'anonymous'
         }
     ]
 });
