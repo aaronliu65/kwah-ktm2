@@ -38,7 +38,7 @@ onMounted(() => {
                     </div>
                 </template>
                 <template #tc>
-                    <div class="prose text-[0.875em]! leading-[1.2]!">
+                    <div class="prose text-[0.75em]! leading-[1.2]!">
                         <p>
                             此庫存影像經過電腦修飾處理，並非於或自本發展項目及/或期數中任何部分或其附近拍攝，亦非用作展示本發展項目及/或期數之
                             景觀、設施、周邊建築物及環境，與本發展項目及/或期數無關，僅供參考。相關影像及圖片並不構成亦不得詮釋成作出任何不論
