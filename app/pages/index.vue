@@ -15,6 +15,11 @@ onMounted(() => {
 });
 </script>
 
+
+<style scoped>
+@reference "~/assets/css/style.css";
+</style>
+
 <template>
     <div class="main-content">
         <ImgDisclaimer>
@@ -57,7 +62,7 @@ onMounted(() => {
                 class="absolute inset-0 z-0 flex items-center justify-center"
                 v-if="hasLogo || prerender"
             >
-                <div class="aspect-760/320 w-[39.6cqw] max-w-[760px]">
+                <div class="aspect-760/320 w-[75%] @min-[992px]:w-[39.6cqw] max-w-[760px]">
                     <SharpImg src="logo_ktm2.png" />
                 </div>
             </div>
@@ -69,7 +74,7 @@ onMounted(() => {
             <PopupBox
                 :fixed="false"
                 :enterUrl="'/home'"
-                :hasBtnClose="viewPort == 'desktop' ? true : false"
+                :hasBtnEnter="viewPort == 'desktop' ? true : false"
                 v-if="hasMainDisclaimer"
             >
                 <div class="prose font-light text-(--text-color-primary)">
@@ -189,7 +194,7 @@ onMounted(() => {
                                 發展項目及期數名稱：啟德海灣（「發展項目」）的第2期稱為「啟德海灣
                                 2」（期數）。| 期數所位於的區域：啟德 |
                                 期數所位於的街道的名稱及門牌號數：承豐道 15 號 |
-                                賣方就期數指定的互聯網網站的網址：www.ktmarina2.com.hk
+                                賣方就期數指定的互聯網網站的網址：<a >www.ktmarina2.com.hk</a>
                                 <br />
                                 本廣告/宣傳資料內載列的相片、圖像、繪圖或素描顯示純屬畫家對有關發展項目之想像。有關相片、圖像、繪圖或素描並非按照比例繪畫及/或可能經過電腦修飾處理。準買家如欲了解發展項目的詳情，請參閱售樓說明書。賣方亦建議準買家到有關發展地盤作實地考察，以對該發展地盤、其周邊地區環境及附近的公共設施有較佳了解。
                             </p>
@@ -222,7 +227,3 @@ onMounted(() => {
         </Transition>
     </div>
 </template>
-
-<style scoped>
-@reference "~/assets/css/style.css";
-</style>

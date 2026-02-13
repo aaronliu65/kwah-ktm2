@@ -23,7 +23,7 @@ const props = defineProps({
         type: Boolean,
         default: true,
     },
-    AutoHeight: {
+    autoHeight: {
         type: Boolean,
         default: false,
     },
@@ -68,34 +68,37 @@ const emit = defineEmits(["closed"]);
 
 :deep(> .scrollbar-track) {
     &.scrollbar-track-y {
-        @apply right-1 w-1 overflow-visible rounded-full bg-(--theme-color-primary)/15;
+        @apply w-1 overflow-visible rounded-full bg-(--theme-color-primary)/15;
 
         .scrollbar-thumb {
-            @apply -left-[2px] w-2 overflow-visible rounded-full bg-(--theme-color-primary);
+            @apply w-1 overflow-visible rounded-full bg-(--theme-color-primary) @min-[992px]:-left-[2px] @min-[992px]:w-2;
         }
     }
 }
 
 .popup-box-wrapper {
-    @apply inset-0 flex items-center justify-center pt-[calc(var(--header-height)+7px)] [&:not([class*='z-'])]:z-9;
+    @apply inset-0 flex items-center justify-center @min-[769px]:pt-[calc(var(--header-height)+7px)] [&:not([class*='z-'])]:z-9 @max-[768px]:pt-[calc(var(--header-height)+7px)];
 }
 
 .popup-box {
-    @apply relative flex h-[calc(100%-80px)] max-h-[640px] w-[calc(100%-60px)] max-w-[1225px] flex-col items-start justify-start gap-4 overflow-hidden bg-(--theme-color-secondary)/90 px-6 @min-[992px]:px-(--box-x-padding,72px) pt-6 @min-[992px]:pt-(--box-t-padding,104px) pb-(--box-b-padding,144px);
-
+    @apply relative flex h-[calc(100%-80px)] max-h-[640px] w-[calc(100%-32px)] max-w-[1225px] flex-col items-start justify-start gap-4 overflow-hidden bg-(--theme-color-secondary)/90 px-6 pt-14 pb-6 @min-[769px]:w-[calc(100%-60px)] @min-[769px]:px-(--box-x-padding,72px) @min-[769px]:pt-(--box-t-padding,104px) @min-[769px]:pb-(--box-b-padding,144px);
     .btn-close {
-        @apply absolute top-8 right-8 cursor-pointer;
+        @apply absolute top-4 right-3 cursor-pointer @min-[992px]:top-8 @min-[992px]:right-8;
     }
 
     .btn-enter {
-        @apply absolute inset-x-0 bottom-10 mx-auto cursor-pointer @min-[992px]:text-[1.125em] text-[#58595b];
+        @apply absolute inset-x-0 bottom-10 mx-auto cursor-pointer text-[#58595b] @min-[992px]:text-[1.125em];
     }
 
     .content {
-        @apply h-full overflow-hidden;
+        @apply h-full w-full overflow-hidden;
+
+        &:deep(a) {
+            @apply font-normal break-all text-(--text-color-primary) no-underline;
+        }
 
         &:has(div.scrollbar-track.scrollbar-track-y[style="display: block;"]) {
-            @apply -mr-4 pr-6 @min-[992px]:-mr-7 @min-[992px]:pr-7;
+            @apply pr-6 @min-[992px]:pr-7;
         }
     }
 }
@@ -107,13 +110,13 @@ const emit = defineEmits(["closed"]);
 
 <template>
     <div class="popup-box-wrapper" :class="{ fixed: fixed, absolute: !fixed }">
-        <div class="popup-box" :class="{ 'h-auto!': AutoHeight }">
+        <div class="popup-box" :class="{ 'h-auto!': autoHeight }">
             <div class="btn-close" @click="emit('closed')" v-if="hasBtnClose">
                 <NuxtLinkLocale :to="`${enterUrl}`">
                     <svgo_icon-close
                         filled
                         :fontControlled="false"
-                        class="min-h-6 min-w-6 h-[1.875cqw] w-[1.875cqw] max-w-9 max-h-9"
+                        class="h-[1.875cqw] max-h-9 min-h-6 w-[1.875cqw] max-w-9 min-w-6"
                     />
                 </NuxtLinkLocale>
             </div>
@@ -126,12 +129,8 @@ const emit = defineEmits(["closed"]);
                 <NuxtLinkLocale :to="`${enterUrl}`">
                     <div class="flex items-center justify-center gap-1">
                         <Translate>
-                            <template #en>
-                                Enter
-                            </template>
-                            <template #tc>
-                                進入
-                            </template>
+                            <template #en> Enter </template>
+                            <template #tc> 進入 </template>
                         </Translate>
                         <svgo_icon-enter
                             filled

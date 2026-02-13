@@ -2,10 +2,10 @@
 @reference "~/assets/css/style.css";
 
 .footer {
-    @apply relative overflow-hidden bg-(--theme-color-secondary)/90 pt-26.5 pb-46.25 text-(--text-color-primary);
+    @apply relative overflow-hidden bg-(--theme-color-secondary)/90 @min-[769px]:pt-[5.52cqw] @min-[1920px]:pt-26.5 py-6 @min-[769px]:pb-[9.63cqw] @min-[1920px]:pb-46.25 text-(--text-color-primary);
 
     .inner-footer {
-        @apply mx-auto w-[85%] px-4 text-center;
+        @apply mx-auto @min-[769px]:w-[85%] px-4 text-center;
     }
 }
 </style>
@@ -13,7 +13,7 @@
 <template>
     <div class="footer">
         <div class="inner-footer">
-            <div class="mb-24 flex items-center justify-center gap-14">
+            <div class="mb-12 @min-[1280px]:mb-24 flex items-center justify-center gap-[2.92cqw] @min-[1920px]:gap-14">
                 <div class="aspect-392/69 w-[392px]">
                     <svgo_logo-kwah
                         filled
@@ -37,7 +37,7 @@
                 </div>
             </div>
             <div
-                class="mb-[0.3rem] text-[2.625cqw] tracking-[0.2em] @min-[1920px]:text-[3.15em] [html[data-lang='en']_&]:uppercase [html[data-lang='en']_&]:tracking-normal"
+                class="mb-[0.3rem] text-[1.5em] @min-[769px]:text-[2.625cqw] tracking-[0.2em] @min-[1920px]:text-[3.15em] [html[data-lang='en']_&]:uppercase [html[data-lang='en']_&]:tracking-normal @max-[768px]:[html[data-lang='en']_&]:text-[1.25em]"
             >
                 <Translate>
                     <template #en
@@ -47,7 +47,7 @@
                     <template #tc> 現樓示範單位 歡迎預約參觀 </template>
                 </Translate>
             </div>
-            <div class="mb-24 text-[1.125cqw] @min-[1920px]:text-[1.35em]">
+            <div class="mb-12 @min-[1280px]:mb-24 text-[0.875em] @min-[769px]:text-[1.125cqw] @min-[1920px]:text-[1.35em]">
                 <Translate>
                     <template #en> Enquiry Hotline: </template>
                     <template #tc> 查詢熱線： </template>

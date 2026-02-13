@@ -30,8 +30,9 @@ useHead({
             <PopupBox
                 :fixed="false"
                 :hasBtnEnter="false"
-                :AutoHeight="true"
+                :autoHeight="true"
                 @closed="wechatQr = false"
+                class="@max-[768px]:z-13 [&_.popup-box]:bg-transparent! @max-[768px]:pt-0!"
                 v-if="wechatQr"
             >
                 <div class="flex h-full items-center justify-center">

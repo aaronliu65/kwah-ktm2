@@ -5,9 +5,10 @@ const vWidth = useState("vWidth", () => 0);
 const vHeight = useState("vHeight", () => 0);
 const headerHeight = useState("headerHeight", () => 0);
 const viewPort = useState("viewPort", () => "");
-const hasMainDisclaimer = useState('hasMainDisclaimer', () => false);
-const hasHeader = useState('hasHeader', () => true);
-const wechatQr = useState('wechatQr', () => false)
+const hasMainDisclaimer = useState("hasMainDisclaimer", () => false);
+const hasHeader = useState("hasHeader", () => true);
+const wechatQr = useState("wechatQr", () => false);
+const showloading = ref(true);
 
 if (document) {
     window.addEventListener("resize", () => {
@@ -36,13 +37,16 @@ const siteName = useState("siteName", () => {
 watchEffect(() => {
     switch (locale.value) {
         case "en":
-            siteName.value = "KT Marina2 啟德海灣2 - Victoria Harbour Living | Official Website";
+            siteName.value =
+                "KT Marina2 啟德海灣2 - Victoria Harbour Living | Official Website";
             break;
         case "sc":
-            siteName.value = "启德海湾2 KT Marina2 - 维多利亚港生活圈 ｜ 官方网站";
+            siteName.value =
+                "启德海湾2 KT Marina2 - 维多利亚港生活圈 ｜ 官方网站";
             break;
         case "tc":
-            siteName.value = "啟德海灣2 KT Marina2 - 維多利亞港生活圈 ｜ 官方網站";
+            siteName.value =
+                "啟德海灣2 KT Marina2 - 維多利亞港生活圈 ｜ 官方網站";
             break;
     }
 });
@@ -76,6 +80,16 @@ useHead({
 
 <template>
     <div>
+        <Transition
+            enter-active-class="animate__animated animate__fadeIn"
+            leave-active-class="animate__animated animate__fadeOut"
+        >
+            <FancyLoading v-if="showloading" @loaded="showloading = false">
+                <template v-slot:loading-icon>
+                    <img src="/images/logo_ktm2.png" class="max-w-40" />
+                </template>
+            </FancyLoading>
+        </Transition>
         <Head>
             <Style>{{ `body { --header-height: ${headerHeight}px; }` }}</Style>
         </Head>

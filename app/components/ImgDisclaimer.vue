@@ -52,12 +52,12 @@ const vScroll = {
 }
 
 .img-disclaimer {
-    @apply absolute bottom-8 left-8 z-10;
+    @apply absolute bottom-4 @min-[992px]:bottom-8 left-4 @min-[992px]:left-8 z-10;
 
     --disclaimer-text-color: white;
 
     .btn-disclaimer {
-        @apply flex cursor-pointer items-center gap-x-2 text-[0.85em] text-(--disclaimer-text-color);
+        @apply flex cursor-pointer items-center gap-x-2 text-[0.75em] @min-[992px]:text-[0.85em] text-(--disclaimer-text-color);
 
         .triangle {
             @apply h-0 w-0 border-[5px_0_5px_7px] border-solid border-transparent border-l-(--disclaimer-text-color);
@@ -65,7 +65,7 @@ const vScroll = {
     }
 
     .box-disclaimer {
-        @apply absolute bottom-[calc(100%+0.5rem)] -left-1 w-[calc(380px+1rem)] overflow-hidden bg-(--theme-color-secondary)/90 px-4 pt-8 pb-4  text-(--text-color-primary);
+        @apply absolute bottom-[calc(100%+0.5rem)] -left-1 w-[calc(380px+1rem)] max-w-[calc(100vw-1.5rem)] overflow-hidden bg-(--theme-color-secondary)/90 px-4 pt-8 pb-4  text-(--text-color-primary) shadow-xl;
 
         .btn-close {
             @apply absolute top-2 right-2.5 cursor-pointer;

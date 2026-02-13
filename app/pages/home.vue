@@ -20,7 +20,7 @@ useHead({
 @reference "~/assets/css/style.css";
 
 .video-title {
-    @apply relative mt-4 text-center text-[1.25em] tracking-[0.15em] text-(--theme-color-primary);
+    @apply relative mt-4 text-center @min-[769px]:text-[1.04cqw] @min-[1920px]:text-[1.25em] tracking-[0.15em] text-(--theme-color-primary);
 
     &:before,
     &:after {
@@ -41,7 +41,7 @@ useHead({
     <div class="main-content bg-white/75 pt-[calc(var(--header-height)+7px)]">
         <div class="flex h-full items-center justify-center">
             <div
-                class="flex aspect-814/458 w-[43%] max-w-[814px] cursor-pointer flex-col items-center"
+                class="flex aspect-814/458 w-[75%] @min-[769px]:w-[43%] max-w-[814px] cursor-pointer flex-col items-center"
                 @click="hasVideo = true"
             >
                 <SharpImg
@@ -60,15 +60,15 @@ useHead({
                 </div>
             </div>
         </div>
-        <div class="absolute bottom-16 left-0">
+        <div class="absolute bottom-6 @min-[992px]:bottom-16 left-0">
             <div class="relative">
                 <svgo_shape-title
                     filled
                     :fontControlled="false"
-                    class="w-[250px]"
+                    class="min-w-[180px] w-[13cqw] max-w-[250px]"
                 />
                 <div
-                    class="absolute inset-0 flex items-center justify-end px-10 text-[1.25em] tracking-[0.05em] text-white"
+                    class="absolute inset-0 flex items-center justify-end px-10 @min-[992px]:text-[1.25em] tracking-[0.05em] text-white"
                 >
                 <Translate>
                     <template #en>
