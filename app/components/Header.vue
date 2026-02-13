@@ -240,9 +240,9 @@ watch(
                                     class="@max-[768px]:my-4 @min-[768px]:col-span-2"
                                 >
                                     <div class="widgets">
-                                        <SocialMedia
+                                        <!-- <SocialMedia
                                             @clicked="wechatQr = true"
-                                        />
+                                        /> -->
                                         <LangSwtich />
                                     </div>
                                 </div>
